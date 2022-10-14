@@ -8,5 +8,5 @@
   </head>
   
   <body>
-    <?php include 'partials/nav.php'; ?>
-    <div class="container"
+    <?php include 'views/partials/nav.php'; ?>
+    <div class="container">
