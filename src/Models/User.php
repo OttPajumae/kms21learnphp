@@ -1,6 +1,6 @@
 <?php
 namespace App\Models;
 
-class User {
-   
+class User extends Model {
+    protected static $table="articles";
 }
