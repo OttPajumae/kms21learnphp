@@ -6,6 +6,8 @@
 use App\Controllers\PublicController;
 use App\Router;
 
+session_start();
+
 spl_autoload_register(function($class){
 //     //var_dump($class)
     $class = substr($class, strlen('App\\'));

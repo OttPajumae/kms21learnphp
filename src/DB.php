@@ -65,6 +65,15 @@ class DB {
         // use exec() because no results are returned
         $this->conn->exec($sql);
     }
+    public function where($table, $model, $field, $value){
+        $stmt = $this->conn->prepare("SELECT * FROM $table WHERE $field='$value'");
+        $stmt->execute();
+    
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $model);
+        return $stmt->fetchAll();
+
+    }
 
 }
     
