@@ -15,6 +15,12 @@ class ArticleController {
         view('articles/create');
     }
     public function store(){
+        dump($_POST);
+        dump($_FILES);
+        $extention = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+        $filename = md5(time() . $_FILES['file']['name']) . '.' . $extention;
+        move_uploaded_file($_FILES['file']['tmp_name'], __DIR__ . '/../../public/' .$filename);
+        die();
         $article = new Article();
         $article->title=$_POST['title'];
         $article->body=$_POST['body'];
